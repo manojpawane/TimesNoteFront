@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms'
+import { HttpClient } from '@angular/common/http';
+import { HttpRequestService } from 'src/app/services/registration.service';
 
 @Component({
   selector: 'app-login',
@@ -7,30 +9,34 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms'
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  registerForm: FormGroup;
-  constructor(private fb:FormBuilder) { }
+  loginForm: FormGroup;
+  constructor(private fb:FormBuilder, private service:HttpRequestService) { }
 
   
 
   ngOnInit(): void {
-    this.registerForm = this.fb.group({
-      name: ['', Validators.required],
+    this.loginForm = this.fb.group({
       email: ['', Validators.required],
       password: ['', Validators.required]
     })
   }
-  get name(){
-    return this.registerForm.get('name')
-  }
   get email(){
-    return this.registerForm.get('email')
+    return this.loginForm.get('email')
   }
   get password(){
-    return this.registerForm.get('password')
+    return this.loginForm.get('password')
   }
 
-register(){
-  console.log([this.registerForm])
+login(){
+  this.service.login(
+    this.loginForm.value
+).subscribe(res=>{
+    console.log(res);
+    
+},err=>{
+console.log(err);
+
+});
 }
 }
 

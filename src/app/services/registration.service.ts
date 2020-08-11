@@ -14,4 +14,8 @@ export class HttpRequestService{
     add(user: any){
         return this._http.post('http://localhost:5000/user', user);
     }
+
+    login(loginDetails:any){
+        return this._http.post('http://localhost:5000/user/login', loginDetails)
+    }
 }

@@ -8,7 +8,7 @@
 
 </head>
 <body>
-    <form [formGroup]="registerForm" (ngsubmit)="register()">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
          <div class="bodydiv">
      <div class="register">  
           <div class="title">
@@ -16,21 +16,17 @@
           </div>      
           <div class="formField">
                <div class="input-style">
-                    <input type="text" placeholder="Username" name="userName" id="userName" class="input" required formControlName="name">
+                    <input type="text" placeholder="Email" name="email" id="email" class="input"required formControlName="email">
                </div>
                <div class="input-style">
-                    <input type="text" placeholder="Email" name="Email" id="email" class="input"required formControlName="email">
+                    <input type="password" placeholder="Password" name="password" id="password" class="input" required formControlName="password">
                </div>
-               <div class="input-style">
-                    <input type="password" placeholder="Password" name="Password" id="password" class="input" required formControlName="password">
-               </div>
-               <div class="input-style">
-                    <p class="instruction">Make sure it's at least 15 character OR at least 8 characters including number and a lowercase letter</p>
-               </div>
-               <div class="btn">
-                    <a href="#">SignUp</a>
-               </div>
-
+               <div align="center">
+               <button class="btn btn-primary" type="submit" class="registerbtn">Login</button>
+          </div>
+          <div align="center">
+               <a [routerLink]="'/register'">click here for Registration</a>
+          </div>
           </div>
      </div>
 </div>
