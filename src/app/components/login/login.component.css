@@ -1,0 +1,74 @@
+*{
+    margin: 0 ;
+    padding: 0 ;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    margin: 0%;
+    padding: 0%;
+    min-height: 100%;
+    width: 100%;
+}
+
+.bodydiv{
+    background: rgb(30, 112, 105);
+    height: 100vh;
+    margin: 0; 
+    padding: 30px 30px 30px 30px; 
+    border-left: 50px;
+}
+
+.register{
+    max-width: 350px;
+    width: 100%;
+    height: auto;
+    background: rgb(255, 255, 255);
+    padding: 60px 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 30px;
+}
+
+.register .title{
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    color: darkcyan;
+}
+
+.register .formField .input-style{
+    position: relative;
+    margin-bottom: 10px;
+
+}
+
+.register .formField .input-style .input{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #eeeeee;
+}
+
+.register .formField .input-style .instruction{
+    font-size: 9px;
+}
+
+.register .formField .btn{
+    width: 70%;
+    margin: 20px auto 0;
+    background: darkcyan;
+    padding: 12px;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.register .formField .btn a{
+    color: #ffffff;
+}
