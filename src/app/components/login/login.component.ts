@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { HttpClient } from '@angular/common/http';
 import { HttpRequestService } from 'src/app/services/registration.service';
 import * as jwt_decode from 'jwt-decode';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,7 +12,7 @@ import * as jwt_decode from 'jwt-decode';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   res;
-  constructor(private fb: FormBuilder, private service: HttpRequestService) { }
+  constructor(private fb: FormBuilder, private service: HttpRequestService, private router: Router) { }
 
 
 
@@ -32,11 +33,11 @@ export class LoginComponent implements OnInit {
     this.service.login(
       this.loginForm.value
     ).subscribe(res => {
-      console.log('test:')
-      console.log(res);
       this.res = res;
-      var decoded = jwt_decode(this.res.token);
-      console.log(decoded);
+      localStorage.setItem('token', this.res.token);
+      this.router.navigate(['dashboard']);
+      //var decoded = jwt_decode(this.res.token);
+      //console.log(decoded);
     }, err => {
       console.log(err);
 

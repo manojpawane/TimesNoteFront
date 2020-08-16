@@ -1,36 +1,50 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
-    <meta charset="utf-8">
+  <head lang="en">
+    <meta charset="utf-8" />
     <title>Notes</title>
-    <meta name="viewport" content="height=device-height, initial-scale=1">  
-     <title>SignUp</title>
-
-</head>
-<body>
+    <meta name="viewport" content="height=device-height, initial-scale=1" />
+    <title>SignUp</title>
+  </head>
+  <body>
     <form [formGroup]="loginForm" (ngSubmit)="login()">
-         <div class="bodydiv">
-     <div class="register">  
+      <div class="bodydiv">
+        <div class="register">
           <div class="title">
-               Sign Up
-          </div>      
+            Sign Up
+          </div>
           <div class="formField">
-               <div class="input-style">
-                    <input type="text" placeholder="Email" name="email" id="email" class="input"required formControlName="email">
-               </div>
-               <div class="input-style">
-                    <input type="password" placeholder="Password" name="password" id="password" class="input" required formControlName="password">
-               </div>
-               <div align="center">
-               <button class="btn btn-primary" type="submit" class="registerbtn">Login</button>
+            <div class="input-style">
+              <input
+                type="text"
+                placeholder="Email"
+                name="email"
+                id="email"
+                class="input"
+                required
+                formControlName="email"
+              />
+            </div>
+            <div class="input-style">
+              <input
+                type="password"
+                placeholder="Password"
+                name="password"
+                id="password"
+                class="input"
+                required
+                formControlName="password"
+              />
+            </div>
+            <div align="center">
+              <button class="btn btn-primary" type="submit">Login</button>
+            </div>
+            <div align="center">
+              <a [routerLink]="'/register'">click here for Registration</a>
+            </div>
           </div>
-          <div align="center">
-               <a [routerLink]="'/register'">click here for Registration</a>
-          </div>
-          </div>
-     </div>
-</div>
+        </div>
+      </div>
     </form>
-     
-</body>
+  </body>
 </html>
