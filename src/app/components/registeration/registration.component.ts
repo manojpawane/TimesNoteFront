@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {HttpRequestService} from '../../services/registration.service'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpRequestService } from '../../services/registration.service';
 import { from } from 'rxjs';
 import { Router } from '@angular/router';
 
@@ -9,36 +9,38 @@ import { Router } from '@angular/router';
   templateUrl: './registration.component.html'
 })
 export class RegistrationComponent implements OnInit {
-registerForm : FormGroup;
+  registerForm: FormGroup;
 
-  constructor(private fb:FormBuilder, private service:HttpRequestService, private router: Router) { }
+  constructor(private fb: FormBuilder, private service: HttpRequestService, private router: Router) { }
 
   ngOnInit(): void {
-      this.registerForm= this.fb.group({
-        name:['thisisName', Validators.required],
-        email:['', Validators.required],
-        password:['', Validators.required]  
-      })
+    this.registerForm = this.fb.group({
+      name: ['thisisName', Validators.required],
+      email: ['', Validators.required],
+      password: ['', Validators.required]
+    });
 
   }
-  get name(){
-      return this.registerForm.get('name');
+  get name() {
+    return this.registerForm.get('name');
   }
-  get email(){
-      return this.registerForm.get('email');
-  }
-
-  get password(){
-      return this.registerForm.get('password');
+  get email() {
+    return this.registerForm.get('email');
   }
 
-  register(){
-      this.service.add(
-          this.registerForm.value
-      ).subscribe(res=>{
-          this.router.navigate(['login'])
-          console.log(res);
-          
-      })
+  get password() {
+    return this.registerForm.get('password');
+  }
+
+  register() {
+    this.service.add(
+      this.registerForm.value
+    ).subscribe(res => {
+      this.router.navigate(['login']);
+      console.log(res);
+
+    }, err => {
+      alert(err.message);
+    });
   }
 }
