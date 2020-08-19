@@ -9,7 +9,7 @@ import * as jwt_decode from 'jwt-decode';
 export class DashboardComponent implements OnInit {
 
   constructor() {
-    let myItem = localStorage.getItem('token');
+    let myItem = localStorage.getItem('stoken');
     var decoded = jwt_decode(myItem);
     console.log(decoded);
   }
