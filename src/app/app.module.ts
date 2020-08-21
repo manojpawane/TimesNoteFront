@@ -11,6 +11,9 @@ import { UserVerificationComponent } from './components/user-verification/user-v
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import {GoogleLoginProvider} from 'angularx-social-login';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { SidenavbarComponent } from './components/sidenavbar/sidenavbar.component';
+import { SideNavTogglerComponent } from './components/side-nav-toggler/side-nav-toggler.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import {GoogleLoginProvider} from 'angularx-social-login';
     RegistrationComponent,
     LoginComponent,
     UserVerificationComponent,
-    DashboardComponent
+    DashboardComponent,
+    NavbarComponent,
+    SidenavbarComponent,
+    SideNavTogglerComponent
   ],
   imports: [
     BrowserModule,
