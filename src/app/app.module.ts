@@ -8,23 +8,19 @@ import { RegistrationComponent } from '../app/components/registeration/registrat
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { UserVerificationComponent } from './components/user-verification/user-verification.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import {GoogleLoginProvider} from 'angularx-social-login';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidenavbarComponent } from './components/sidenavbar/sidenavbar.component';
 import { SideNavTogglerComponent } from './components/side-nav-toggler/side-nav-toggler.component';
+import { HomeModule } from './components/home.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
     LoginComponent,
-    UserVerificationComponent,
-    DashboardComponent,
-    NavbarComponent,
-    SidenavbarComponent,
-    SideNavTogglerComponent
+    UserVerificationComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +29,8 @@ import { SideNavTogglerComponent } from './components/side-nav-toggler/side-nav-
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
-    SocialLoginModule
+    SocialLoginModule,
+    HomeModule
   ],
   providers: [HttpClient,
   {
